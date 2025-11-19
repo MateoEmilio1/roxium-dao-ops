@@ -1,13 +1,26 @@
 {
-    "name": "",
+    "name": "roxium-dao-ops",
     "description": "",
     "category": "",
     "publisher": {
         "name": "",
         "url": ""
     },
-    "documentModels": [],
-    "editors": [],
+    "documentModels": [
+        {
+            "id": "roxium-dao-ops/dao",
+            "name": "DAO"
+        }
+    ],
+    "editors": [
+        {
+            "id": "dao-editor",
+            "name": "DAOEditor",
+            "documentTypes": [
+                "roxium-dao-ops/dao"
+            ]
+        }
+    ],
     "apps": [],
     "subgraphs": [],
     "importScripts": []

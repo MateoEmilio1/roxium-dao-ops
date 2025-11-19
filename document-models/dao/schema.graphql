@@ -1,0 +1,75 @@
+scalar Amount_Tokens
+scalar EthereumAddress
+scalar Amount_Percentage
+scalar EmailAddress
+scalar Date
+scalar DateTime
+scalar URL
+scalar Amount_Money
+scalar OLabel
+scalar Currency
+scalar PHID
+scalar OID
+scalar Amount_Fiat
+scalar Amount_Currency
+scalar Amount_Crypto
+scalar Amount
+scalar Upload
+type DaoState {
+  name: String!
+  description: String
+  proposals: [Proposal!]!
+}
+
+type Proposal {
+  id: ID!
+  title: String!
+  description: String!
+  tasks: [Task!]!
+}
+
+type Task {
+  id: ID!
+  title: String!
+  description: String!
+  budget: Float  # optional
+}
+
+
+
+
+# dao_operations
+
+input SetDaoNameInput {
+  "Add your inputs here"
+  name: String!
+}
+
+input SetDescriptionInput {
+  "Add your inputs here"
+  description: String
+}
+
+# proposal_operations
+
+input SetProposalNameInput {
+  "Add your inputs here"
+  name: String!
+}
+
+input SetProposalDescriptionInput {
+  "Add your inputs here"
+  description: String!
+}
+
+# task_operations
+
+input SetTaskNameInput {
+  "Add your inputs here"
+  name: String!
+}
+
+input SetTaskDescriptionInput {
+  "Add your inputs here"
+  description: String!
+}
