@@ -10,9 +10,18 @@ The project lets you create and manage:
 
 Everything is stored as **Arkiv entities**, using the `entityKey` as the on-chain identifier and as a “foreign key” between DAOs, proposals, tasks, and memberships.
 
+## Repositories
+
+- **Backend (Express + Arkiv SDK)**:  
+  https://github.com/Faus14/roxium-dao-ops-IPFS  
+  This repo exposes the `/api/arkiv/*` routes, talks directly to Arkiv, and normalizes entities (`entityKey`, `attributes`, `payload`, `expiresAtBlock`) for the frontend.
+
+- **Frontend (Next.js + UI board)**:  
+  This repository – consumes the backend API and renders the DAO board (DAOs, proposals, tasks).
+
 ## Tech stack
 
-- **Backend**: Node.js + Express
+- **Backend** (in the separate repo above): Node.js + Express
   - Arkiv SDK (`@arkiv-network/sdk`)
   - REST routes under `/api/arkiv/*`:
     - `/daos` → create & list DAOs, fetch board (DAO + proposals + tasks)
@@ -45,4 +54,4 @@ The goal is to demonstrate a full **on-chain DAO operations flow**:
 3. Create **tasks** linked both to the DAO and to a specific proposal (`daoKey` + `proposalKey`).
 4. Visualize everything in a single board (DAO + proposals + tasks) using Arkiv as the only data source.
 
-This repository is a practical example of how to use Arkiv as a **decentralized data layer** for lightweight governance + project management for DAOs, on top of a modern web stack.
+This setup showcases Arkiv as a **decentralized data layer** for lightweight governance + project management for DAOs, backed by a clean separation between backend (Arkiv integration) and frontend (UX and board).
