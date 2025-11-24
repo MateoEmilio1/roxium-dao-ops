@@ -1,5 +1,10 @@
 import { type SignalDispatch } from "document-model";
-import { type SetDaoNameAction, type SetDescriptionAction } from "./actions.js";
+import {
+  type SetDaoNameAction,
+  type SetDescriptionAction,
+  type UpdateDaoNameAction,
+  type UpdateDaoDescriptionAction,
+} from "./actions.js";
 import { type DaoState } from "../types.js";
 
 export interface DaoDaoOperationsOperations {
@@ -11,6 +16,16 @@ export interface DaoDaoOperationsOperations {
   setDescriptionOperation: (
     state: DaoState,
     action: SetDescriptionAction,
+    dispatch?: SignalDispatch,
+  ) => void;
+  updateDaoNameOperation: (
+    state: DaoState,
+    action: UpdateDaoNameAction,
+    dispatch?: SignalDispatch,
+  ) => void;
+  updateDaoDescriptionOperation: (
+    state: DaoState,
+    action: UpdateDaoDescriptionAction,
     dispatch?: SignalDispatch,
   ) => void;
 }

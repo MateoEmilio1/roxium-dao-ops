@@ -2,9 +2,21 @@ import { createAction } from "document-model/core";
 import {
   SetDaoNameInputSchema,
   SetDescriptionInputSchema,
+  UpdateDaoNameInputSchema,
+  UpdateDaoDescriptionInputSchema,
 } from "../schema/zod.js";
-import type { SetDaoNameInput, SetDescriptionInput } from "../types.js";
-import type { SetDaoNameAction, SetDescriptionAction } from "./actions.js";
+import type {
+  SetDaoNameInput,
+  SetDescriptionInput,
+  UpdateDaoNameInput,
+  UpdateDaoDescriptionInput,
+} from "../types.js";
+import type {
+  SetDaoNameAction,
+  SetDescriptionAction,
+  UpdateDaoNameAction,
+  UpdateDaoDescriptionAction,
+} from "./actions.js";
 
 export const setDaoName = (input: SetDaoNameInput) =>
   createAction<SetDaoNameAction>(
@@ -21,5 +33,23 @@ export const setDescription = (input: SetDescriptionInput) =>
     { ...input },
     undefined,
     SetDescriptionInputSchema,
+    "global",
+  );
+
+export const updateDaoName = (input: UpdateDaoNameInput) =>
+  createAction<UpdateDaoNameAction>(
+    "UPDATE_DAO_NAME",
+    { ...input },
+    undefined,
+    UpdateDaoNameInputSchema,
+    "global",
+  );
+
+export const updateDaoDescription = (input: UpdateDaoDescriptionInput) =>
+  createAction<UpdateDaoDescriptionAction>(
+    "UPDATE_DAO_DESCRIPTION",
+    { ...input },
+    undefined,
+    UpdateDaoDescriptionInputSchema,
     "global",
   );

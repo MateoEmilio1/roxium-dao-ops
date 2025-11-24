@@ -28,13 +28,35 @@
                             "template": ""
                         },
                         {
-                            "description": "",
+                            "description": "setting the description of the dao",
                             "errors": [],
                             "examples": [],
                             "id": "df18d049-acac-4360-ab61-901194a72ce3",
                             "name": "SET_DESCRIPTION",
                             "reducer": "",
                             "schema": "input SetDescriptionInput {\n  \"Add your inputs here\"\n  description: String\n}",
+                            "scope": "global",
+                            "template": ""
+                        },
+                        {
+                            "description": "update the name of the dao",
+                            "errors": [],
+                            "examples": [],
+                            "id": "39013fab-d077-4bdc-af57-b14e11e645b3",
+                            "name": "UPDATE_DAO_NAME",
+                            "reducer": "",
+                            "schema": "input UpdateDaoNameInput {\n  \"Add your inputs here\"\n  name: String\n}",
+                            "scope": "global",
+                            "template": ""
+                        },
+                        {
+                            "description": "",
+                            "errors": [],
+                            "examples": [],
+                            "id": "c0ae8af9-e0a2-491a-9c67-33dd26b65e4b",
+                            "name": "UPDATE_DAO_DESCRIPTION",
+                            "reducer": "",
+                            "schema": "input UpdateDaoDescriptionInput {\n  \"Add your inputs here\"\n  description: String\n}",
                             "scope": "global",
                             "template": ""
                         }

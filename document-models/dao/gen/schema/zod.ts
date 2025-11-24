@@ -9,6 +9,8 @@ import type {
   SetTaskDescriptionInput,
   SetTaskNameInput,
   Task,
+  UpdateDaoDescriptionInput,
+  UpdateDaoNameInput,
 } from "./types.js";
 
 type Properties<T> = Required<{
@@ -98,5 +100,21 @@ export function TaskSchema(): z.ZodObject<Properties<Task>> {
     description: z.string(),
     id: z.string(),
     title: z.string(),
+  });
+}
+
+export function UpdateDaoDescriptionInputSchema(): z.ZodObject<
+  Properties<UpdateDaoDescriptionInput>
+> {
+  return z.object({
+    description: z.string().nullish(),
+  });
+}
+
+export function UpdateDaoNameInputSchema(): z.ZodObject<
+  Properties<UpdateDaoNameInput>
+> {
+  return z.object({
+    name: z.string().nullish(),
   });
 }

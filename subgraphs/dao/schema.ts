@@ -30,6 +30,16 @@ export const schema: DocumentNode = gql`
       docId: PHID
       input: Dao_SetDescriptionInput
     ): Int
+    Dao_updateDaoName(
+      driveId: String
+      docId: PHID
+      input: Dao_UpdateDaoNameInput
+    ): Int
+    Dao_updateDaoDescription(
+      driveId: String
+      docId: PHID
+      input: Dao_UpdateDaoDescriptionInput
+    ): Int
     Dao_setProposalName(
       driveId: String
       docId: PHID
@@ -60,6 +70,14 @@ export const schema: DocumentNode = gql`
     name: String!
   }
   input Dao_SetDescriptionInput {
+    "Add your inputs here"
+    description: String
+  }
+  input Dao_UpdateDaoNameInput {
+    "Add your inputs here"
+    name: String
+  }
+  input Dao_UpdateDaoDescriptionInput {
     "Add your inputs here"
     description: String
   }

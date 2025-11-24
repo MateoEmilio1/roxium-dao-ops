@@ -7,6 +7,8 @@ import type {
   DaoDocument,
   SetDaoNameInput,
   SetDescriptionInput,
+  UpdateDaoNameInput,
+  UpdateDaoDescriptionInput,
   SetProposalNameInput,
   SetProposalDescriptionInput,
   SetTaskNameInput,
@@ -141,6 +143,52 @@ export const getResolvers = (
 
         if (result.status !== "SUCCESS") {
           throw new Error(result.error?.message ?? "Failed to setDescription");
+        }
+
+        return true;
+      },
+
+      Dao_updateDaoName: async (
+        _: unknown,
+        args: { docId: string; input: UpdateDaoNameInput },
+      ) => {
+        const { docId, input } = args;
+        const doc = await reactor.getDocument<DaoDocument>(docId);
+        if (!doc) {
+          throw new Error("Document not found");
+        }
+
+        const result = await reactor.addAction(
+          docId,
+          actions.updateDaoName(input),
+        );
+
+        if (result.status !== "SUCCESS") {
+          throw new Error(result.error?.message ?? "Failed to updateDaoName");
+        }
+
+        return true;
+      },
+
+      Dao_updateDaoDescription: async (
+        _: unknown,
+        args: { docId: string; input: UpdateDaoDescriptionInput },
+      ) => {
+        const { docId, input } = args;
+        const doc = await reactor.getDocument<DaoDocument>(docId);
+        if (!doc) {
+          throw new Error("Document not found");
+        }
+
+        const result = await reactor.addAction(
+          docId,
+          actions.updateDaoDescription(input),
+        );
+
+        if (result.status !== "SUCCESS") {
+          throw new Error(
+            result.error?.message ?? "Failed to updateDaoDescription",
+          );
         }
 
         return true;

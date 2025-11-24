@@ -50,6 +50,16 @@ input SetDescriptionInput {
   description: String
 }
 
+input UpdateDaoNameInput {
+  "Add your inputs here"
+  name: String
+}
+
+input UpdateDaoDescriptionInput {
+  "Add your inputs here"
+  description: String
+}
+
 # proposal_operations
 
 input SetProposalNameInput {

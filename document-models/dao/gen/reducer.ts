@@ -12,6 +12,8 @@ import { daoTaskOperationsOperations } from "../src/reducers/task-operations.js"
 import {
   SetDaoNameInputSchema,
   SetDescriptionInputSchema,
+  UpdateDaoNameInputSchema,
+  UpdateDaoDescriptionInputSchema,
   SetProposalNameInputSchema,
   SetProposalDescriptionInputSchema,
   SetTaskNameInputSchema,
@@ -36,6 +38,24 @@ const stateReducer: StateReducer<DaoPHState> = (state, action, dispatch) => {
     case "SET_DESCRIPTION":
       SetDescriptionInputSchema().parse(action.input);
       daoDaoOperationsOperations.setDescriptionOperation(
+        (state as any)[action.scope],
+        action as any,
+        dispatch,
+      );
+      break;
+
+    case "UPDATE_DAO_NAME":
+      UpdateDaoNameInputSchema().parse(action.input);
+      daoDaoOperationsOperations.updateDaoNameOperation(
+        (state as any)[action.scope],
+        action as any,
+        dispatch,
+      );
+      break;
+
+    case "UPDATE_DAO_DESCRIPTION":
+      UpdateDaoDescriptionInputSchema().parse(action.input);
+      daoDaoOperationsOperations.updateDaoDescriptionOperation(
         (state as any)[action.scope],
         action as any,
         dispatch,

@@ -105,3 +105,13 @@ export type Task = {
   id: Scalars["ID"]["output"];
   title: Scalars["String"]["output"];
 };
+
+export type UpdateDaoDescriptionInput = {
+  /** Add your inputs here */
+  description?: InputMaybe<Scalars["String"]["input"]>;
+};
+
+export type UpdateDaoNameInput = {
+  /** Add your inputs here */
+  name?: InputMaybe<Scalars["String"]["input"]>;
+};
